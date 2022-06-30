@@ -5,9 +5,13 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
+      unique: true,
       // unique: true -> Ideally, should be unique, but its up to you
     },
-    password: String,
+    passwordHash: String,
+    donatedCampaign: [{type: Schema.Types.ObjectId, ref: 'Campaign'}],
+    signedCampaign: [{type: Schema.Types.ObjectId, ref: 'Campaign'}],
+    createdCampaign: [{type: Schema.Types.ObjectId, ref: 'Campaign'}]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
