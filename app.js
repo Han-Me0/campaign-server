@@ -19,6 +19,12 @@ require("./config")(app);
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
+const campaignsRouter = require("./routes/campaigns.routes");
+app.use("/api/campaigns", campaignsRouter);
+
+const categoriesRouter = require("./routes/categories.routes");
+app.use("/api/categories", categoriesRouter);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
