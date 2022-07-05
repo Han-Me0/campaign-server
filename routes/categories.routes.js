@@ -30,8 +30,8 @@ router.post("/", async (req, res, next) => {
 
 router.put("/:categoryId", async (req, res, next) => {
   const {categoryId} = req.params
-  const {kind} = req.body
-  const newData = {}
+  const {kind, campaigns} = req.body
+  const newData = {campaigns}
 
   if(kind !== ''){
     newData.kind = kind.trim()

@@ -10,8 +10,8 @@ const categories = [
        place: "Syria",
        campaignType:"educational aid",
        totalAmount: 100000,
-    },
-   ]},
+    }]
+},
     {
        kind: "Environmental Aid",
        campaigns: [{
@@ -63,7 +63,7 @@ const categories = [
        title:"Stop the Amazon's Massacres",
        description: "We call on you to take urgent measures to stop all attacks against the Yanomami people in the Brazilian Amazon, including putting political and economic pressure on the Brazilian government to ensure the rights of all Indigenous peoples are duly respected. We cannot allow this massacre to continue anymore. Together, your actions can give the Yanomami the assurance that the world won't turn the back on them at this darkest hour.",
        place: "Amazon",
-       campaignTyp:"humanitarian aid",
+       campaignType:"humanitarian aid",
        totalAmount: 1000000,
  },
    {  image: "../public/images/Afghanestan.png",

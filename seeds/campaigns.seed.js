@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const campaignModel = require('../models/Campaign.model')
 const campaigns = [
-    {  image: "../public/images/boy.jpg",
+    {  image: "https://www.istockphoto.com/de/foto/gelbes-megaphon-auf-blauem-hintergrund-gm1312143759-401040123?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_zsr&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fcampaaign&utm_term=campaaign%3A%3A%3A",
        title:"Education is not a luxury of peacetime",
        description: "In 2021, We continued to provide vital services responding to the most pressing needs, supporting children out of school and bringing them back to the educational path, distributing food to the most vulnerable people, and supporting healthcare services in communities and camps.",
        place: "Syria",

@@ -7,6 +7,11 @@ router.get("/", async (req, res, next) => {
   res.json(campaigns)
 })
 
+// router.get("/search", async (req, res, next) => {
+//   const campaigns = await Campaign.find()
+//   res.json(campaigns)
+// })
+
 router.get("/:campaignId", async (req, res, next) => {
   const {campaignId} = req.params
   const campaign = await Campaign.findById(campaignId)
