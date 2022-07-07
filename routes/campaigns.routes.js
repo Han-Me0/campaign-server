@@ -41,33 +41,26 @@ router.put("/:campaignId", async (req, res, next) => {
   const {image, title, description, place, campaignType, totalAmount} = req.body
   const newData = {}
 
-  if(image !== '' || image == undefined){
+  if(image !== '' ){
     newData.image = image.trim()
   }
-  if(title !== '' || title == undefined ){
+  if(title !== '' ){
     newData.title = title.trim()
   }
-  if(description !== '' || description == undefined){
+  if(description !== ''){
     newData.description = description.trim()
   }
-  if(place !== '' || place == undefined){
+  if(place !== ''){
     newData.place = place.trim()
   }
-  if(campaignType !== '' || campaignType == undefined){
+  if(campaignType !== ''){
     newData.campaignType = campaignType.trim()
   }
-  if(totalAmount !== 0 || totalAmount == undefined){
+  if(totalAmount !== '0'){
     newData.totalAmount = parseFloat(totalAmount)
   }
   try {
-   const campaign = await Campaign.findByIdAndUpdate(campaignId, {
-     image: image.trim(),
-     title: title.trim(),
-     description: description.trim(),
-     place: place.trim(),
-     campaignType: campaignType.trim(),
-     totalAmount: parseFloat(totalAmount)
-    })
+   const campaign = await Campaign.findByIdAndUpdate(campaignId, newData)
     res.status(202).json({message: 'campaign updated', id: campaign.id})
   } catch (error) {
     res.status(500).json(error)
