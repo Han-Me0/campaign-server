@@ -3,13 +3,13 @@ const Category = require("../models/Category.model");
 const router = require("express").Router();
 
 router.get("/", async (req, res, next) => {
-  const category = await Category.find().populate('campaigns')
-  res.json(category)
+  const categories = await Category.find().populate('campaigns')
+  res.json(categories)
 })
 
 router.get("/:categoryId", async (req, res, next) => {
   const {categoryId} = req.params
-  const category = await Category.findById(categoryId)
+  const category = await Category.findById(categoryId).populate('campaigns')
   res.json(category)
 })
 
@@ -39,7 +39,7 @@ router.put("/:categoryId", async (req, res, next) => {
   
   try {
    const category = await Category.findByIdAndUpdate(categoryId, newData)
-    res.status(202).json({message: 'campaign updated', id: category.id})
+    res.status(202).json({message: 'category updated', id: category.id})
   } catch (error) {
     res.status(500).json(error)
   } 
